@@ -1,0 +1,74 @@
+[tool.briefcase]
+project_name = "TBoxAppClientProject"
+bundle = "com.example"
+version = "0.0.1"
+url = "https://example.com/tboxappclient"
+license = "MIT license"
+author = 'zhy'
+author_email = "2465612295@qq.com"
+
+[tool.briefcase.app.tboxappclient]
+formal_name = "TBoxAppClient"
+description = "App端用于监控车辆状态信息，并可远程给车辆下发指令，控制车辆"
+icon = "src/tboxappclient/resources/tboxappclient"
+sources = ['src/tboxappclient']
+requires = [
+]
+
+
+[tool.briefcase.app.tboxappclient.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev38',
+    'std-nslog~=1.0.0'
+]
+
+[tool.briefcase.app.tboxappclient.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev38',
+]
+
+[tool.briefcase.app.tboxappclient.linux.appimage]
+system_requires = [
+    'gir1.2-webkit-3.0',
+    'libcairo2-dev',
+    'libgirepository1.0-dev',
+    'libgtk-3-dev',
+    'libpango1.0-dev',
+    'librsvg2-dev',
+    'libwebkitgtk-3.0-0',
+]
+linuxdeploy_plugins = [
+    'DEPLOY_GTK_VERSION=3 gtk',
+]
+
+[tool.briefcase.app.tboxappclient.linux.flatpak]
+flatpak_runtime = 'org.gnome.Platform'
+flatpak_runtime_version = '42'
+flatpak_sdk = 'org.gnome.Sdk'
+
+[tool.briefcase.app.tboxappclient.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev38',
+]
+
+# Mobile deployments
+[tool.briefcase.app.tboxappclient.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev38',
+    'std-nslog~=1.0.0'
+]
+
+[tool.briefcase.app.tboxappclient.android]
+requires = [
+    'toga-android>=0.3.0.dev39',
+    "aliyun-iot-linkkit",
+    "requests"
+]
+
+[tool.briefcase.app.tboxappclient.web]
+requires = [
+    # Workaround; toga-web 0.3.0.dev38 doesn't include toga-core as a dependency.
+    "toga-core>=0.3.0.dev38",
+    "toga-web>=0.3.0.dev38",
+]
+style_framework = "Bootstrap v4.6"

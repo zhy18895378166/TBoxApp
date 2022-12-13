@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Briefcase-Version: 0.3.11
+Name: tboxappclient
+Formal-Name: TBoxAppClient
+App-ID: com.example.tboxappclient
+Version: 0.0.1
+Home-page: https://example.com/tboxappclient
+Download-URL: https://example.com/tboxappclient
+Author: zhy
+Author-email: 2465612295@qq.com
+Summary: App端用于监控车辆状态信息，并可远程给车辆下发指令，控制车辆
